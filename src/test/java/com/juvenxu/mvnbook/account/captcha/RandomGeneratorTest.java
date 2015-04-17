@@ -5,13 +5,13 @@ import static org.junit.Assert.assertFalse;
 import java.util.HashSet;
 import java.util.Set;
 
-import org.junit.Test;
+import org.testng.annotations.Test;
+
 
 public class RandomGeneratorTest
 {
     @Test
-    public void testGetRandomString()
-        throws Exception
+    public void testGetRandomString()  throws Exception
     {
         Set<String> randoms = new HashSet<String>( 100 );
 
@@ -23,5 +23,7 @@ public class RandomGeneratorTest
 
             randoms.add( random );
         }
+        System.out.println("ddddddddddd");
     }
+    
 }

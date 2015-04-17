@@ -34,8 +34,8 @@
 			<artifactId>spring-context</artifactId>
 		</dependency>
 		<dependency>
-			<groupId>junit</groupId>
-			<artifactId>junit</artifactId>
+			<groupId>org.testng</groupId>
+			<artifactId>testng</artifactId>
 		</dependency>
 	</dependencies>
 
@@ -52,4 +52,36 @@
 			</snapshots>
 		</repository>
 	</repositories>
+	
+	<!-- 引用插件库资源，由于已经在maven的setting中配置，故不需要再引用 -->
+	<!-- <pluginRepositories>
+	   <pluginRepository>
+	      <id>nexus</id>
+	      <name>Nexus</name>
+	      <url>http://repo1.maven.org/maven2/org/apache/maven/plugins/</url>
+	      <releases><enabled>true</enabled></releases>
+	      <snapshots><enabled>true</enabled></snapshots>
+	   </pluginRepository>
+	</pluginRepositories> -->
+	
+	<!-- 引入具体插件 -->
+	<build>
+		<pluginManagement>
+			<plugins>
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-surefire-plugin</artifactId>
+					<version>2.12.4</version>
+					<configuration>
+						<suiteXmlFiles>
+						  <suiteXmlFile>testng.xml</suiteXmlFile>
+						  <!-- 这里配置可以对测试组进行测试 -->
+						 <!--  <groups>util,medium</groups> -->
+						</suiteXmlFiles>
+					</configuration>
+				</plugin>
+			</plugins>
+		</pluginManagement>
+	</build>
+	
 </project>

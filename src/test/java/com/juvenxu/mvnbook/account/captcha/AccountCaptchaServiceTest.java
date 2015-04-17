@@ -8,16 +8,16 @@ import java.io.OutputStream;
 import java.util.ArrayList;
 import java.util.List;
 
-import org.junit.Before;
-import org.junit.Test;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
+import org.testng.annotations.BeforeTest;
+import org.testng.annotations.Test;
 
 public class AccountCaptchaServiceTest
 {
     private AccountCaptchaService service;
 
-    @Before
+    @BeforeTest
     public void prepare()
         throws Exception
     {
